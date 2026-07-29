@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>内蒙亲子自驾行程 · 8/4晚到-8/9 · 草原·沙漠·火山</title>
+<style>
+  :root{
+    --green:#2f8f5b; --green-d:#1f6b43;
+    --gold:#d9a441; --gold-d:#b9842a;
+    --vol:#4a4458; --vol-d:#322e3d;
+    --ink:#23303a; --muted:#6b7a86; --line:#e3e9ec; --bg:#f6f8f7;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+  .wrap{max-width:920px;margin:0 auto;padding:0 18px 60px}
+  header.hero{background:linear-gradient(120deg,var(--green) 0%,var(--gold) 55%,var(--vol) 100%);color:#fff;padding:34px 22px 30px;border-radius:0 0 18px 18px;box-shadow:0 6px 22px rgba(0,0,0,.18)}
+  header.hero h1{margin:0 0 6px;font-size:26px;letter-spacing:1px}
+  header.hero p{margin:2px 0;opacity:.95;font-size:14px}
+  .pill{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:3px 11px;margin:6px 6px 0 0;font-size:12.5px}
+  h2{font-size:19px;margin:34px 0 12px;padding-left:11px;border-left:5px solid var(--green);}
+  h2.gold{border-color:var(--gold)} h2.vol{border-color:var(--vol)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;margin:12px 0;box-shadow:0 2px 10px rgba(20,40,30,.05)}
+  .route{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:6px 0 2px}
+  .node{background:#fff;border:2px solid var(--green);border-radius:12px;padding:10px 12px;min-width:120px;text-align:center;font-size:13.5px;font-weight:600}
+  .node .sub{font-weight:400;font-size:11.5px;color:var(--muted);display:block;margin-top:3px}
+  .arrow{color:var(--muted);font-size:20px;font-weight:700}
+  .day{display:flex;gap:14px;align-items:flex-start}
+  .dayno{flex:0 0 78px;background:linear-gradient(160deg,var(--green),var(--green-d));color:#fff;border-radius:12px;padding:12px 8px;text-align:center;font-weight:700;line-height:1.3}
+  .dayno .d{font-size:20px} .dayno .dt{font-size:11px;opacity:.9;font-weight:400}
+  .daybody{flex:1}
+  .tag{display:inline-block;font-size:11.5px;border-radius:6px;padding:2px 8px;margin-right:6px;margin-bottom:4px;font-weight:600}
+  .t-grass{background:#e7f4ec;color:var(--green-d)} .t-vol{background:#eceaf2;color:var(--vol-d)} .t-des{background:#fbf1dc;color:var(--gold-d)} .t-city{background:#e8f0f5;color:#2d6a9f}
+  .tl{list-style:none;padding:0;margin:8px 0 0}
+  .tl li{position:relative;padding:5px 0 5px 18px;border-left:2px dashed var(--line);margin-left:5px}
+  .tl li::before{content:"";position:absolute;left:-6px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+  .tl li b{color:var(--ink)}
+  .drive{background:#f1f6f3;border-left:4px solid var(--green);padding:8px 12px;border-radius:8px;font-size:13px;margin:8px 0}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f0f4f2;font-weight:600}
+  .warn{background:#fff7e8;border:1px solid #f0d9a0;border-radius:10px;padding:12px 14px;font-size:13.5px;margin:10px 0}
+  .warn b{color:var(--gold-d)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}.dayno{flex-basis:64px}}
+  ul.tips{margin:6px 0;padding-left:20px;font-size:13.5px}
+  ul.tips li{margin:4px 0}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:30px}
+  .est{font-size:12px;color:var(--muted)}
+  .alloc{background:#eef6f1;border:1px solid #cfe6da;border-radius:10px;padding:10px 14px;font-size:13.5px;margin:10px 0}
+  .alloc b{color:var(--green-d)}
+  .stay{background:#eef3fa;border:1px solid #cfe0f0;border-radius:10px;padding:8px 12px;font-size:13px;margin:8px 0}
+  .stay b{color:#2d6a9f}
+  .ticket{background:#fbf1dc;border:1px solid #f0d9a0;border-radius:10px;padding:10px 14px;font-size:13.5px;margin:10px 0}
+  .ticket b{color:var(--gold-d)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>🚙 内蒙亲子自驾 · 草原 · 沙漠 · 火山</h1>
+  <p>南京 ⇄ 呼和浩特双飞 ｜ 一家三口（女儿初中毕业旅行）｜ 6天5晚（8/4晚到）｜ SUV 自驾环线</p>
+  <p>2026年8月4日 晚 飞抵 ⇄ 8月9日 返程</p>
+  <div>
+    <span class="pill">🟢 辉腾锡勒草原（重点·多留）</span>
+    <span class="pill">🌋 乌兰哈达火山（仅打卡）</span>
+    <span class="pill">🏜️ 响沙湾沙漠（重点·多留）</span>
+    <span class="pill">🌙 8/4晚提前到达·整体更宽松</span>
+    <span class="pill">💡 落地次日取车，省 1 天费用</span>
+    <span class="pill">🛣️ 全程高速/铺装路，不绕路</span>
+    <span class="pill">🚙 1年新车·送车到酒店/机场取回</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="alloc">
+    ⏱ <b>时间分配（已按你要求调整 + 提前一晚更宽松）</b>：草原 ≈ 1.5 天（D2 下午 + D3 上午晨景）｜ 沙漠 ≈ 1 天+夜（D4 傍晚 + D5 上午）｜ <b>火山仅 ≈ 0.5 天纯打卡</b>（D3 中午，不深度徒步、不连看 7/8 号）｜ 8/4 晚到达 + 8/5 市区松弛日 = 呼和浩特<b>连住 2 晚</b>缓冲，每天车程 ≤ 3.5h，节奏明显更松。
+  </div>
+
+  <h2>一、为什么这样排（路线逻辑）</h2>
+  <div class="card">
+    <p>三个目的地相对呼和浩特的方位：<b>草原在东北、火山在正东、沙漠在西南（鄂尔多斯/达拉特旗）</b>。按「东北 → 东 → 西南 → 回程东」走，刚好是一个不回头的环线，全程高速或铺装省道，几乎没有冤枉路。提前一晚（8/4 晚）到达，让 8/5 成为完整的市区松弛/采购日，8/6 一早取车出发，全程不赶。</p>
+    <div class="route">
+      <div class="node">呼和浩特·市区<span class="sub">D0 到达 / D5 还车</span></div>
+      <span class="arrow">→</span>
+      <div class="node" style="border-color:var(--green)">辉腾锡勒草原<span class="sub">东北 · 约100km/2h</span></div>
+      <span class="arrow">→</span>
+      <div class="node" style="border-color:var(--vol)">乌兰哈达火山<span class="sub">东 · 约120km/2h · 仅打卡</span></div>
+      <span class="arrow">→</span>
+      <div class="node" style="border-color:var(--gold)">响沙湾沙漠<span class="sub">西南 · 约300km/4h</span></div>
+      <span class="arrow">→</span>
+      <div class="node">回呼和浩特<span class="sub">东 · 约200km/2.5h</span></div>
+    </div>
+    <p class="est">* 距离为近似自驾里程，实际以导航为准；8月为内蒙古旺季，草原/沙漠景区车流较大，建议早出发。</p>
+  </div>
+
+  <h2 class="vol">一·附、行程路线图（节点 · 距离 · 车程）</h2>
+  <div class="card">
+    <p class="est">🟢草原 · 🟣火山 · 🟡沙漠 · 🔵城市/机场。实线=自驾段（D2 起）；D0/D1 在呼和浩特无车，靠打车/公共交通。距离为近似自驾里程，以出发前导航为准。<b>本行程 5 晚住宿 ✅ 均已预订。</b></p>
+    <svg viewBox="0 0 760 520" width="100%" style="display:block;max-width:720px;margin:6px auto 0" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+      <defs>
+        <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L8,3 L0,6 Z" fill="#777"></path>
+        </marker>
+      </defs>
+      <!-- 连接线 -->
+      <path d="M110,450 Q180,250 350,80" fill="none" stroke="#2f8f5b" stroke-width="3.5" marker-end="url(#arw)"/>
+      <path d="M350,80 Q500,110 600,210" fill="none" stroke="#4a4458" stroke-width="3.5" marker-end="url(#arw)"/>
+      <path d="M600,210 Q350,430 110,260" fill="none" stroke="#d9a441" stroke-width="3.5" marker-end="url(#arw)"/>
+      <path d="M110,260 L110,450" fill="none" stroke="#2d6a9f" stroke-width="3.5" marker-end="url(#arw)"/>
+      <!-- 段标签 -->
+      <text x="200" y="250" font-size="13" font-weight="700" fill="#1f6b43">D2 自驾 · 100km · 2h</text>
+      <text x="468" y="116" font-size="13" font-weight="700" fill="#322e3d">D3 自驾 · 120km · 2h</text>
+      <text x="300" y="408" font-size="13" font-weight="700" fill="#b9842a" text-anchor="middle">D4 自驾 · 280–300km · 3–3.5h</text>
+      <text x="62" y="362" font-size="13" font-weight="700" fill="#2d6a9f" text-anchor="end">D5 自驾 · 200km · 2.5h</text>
+      <!-- 节点A 呼和浩特 -->
+      <circle cx="110" cy="450" r="27" fill="#2d6a9f" stroke="#fff" stroke-width="2.5"/>
+      <text x="110" y="458" font-size="20" text-anchor="middle">✈️</text>
+      <text x="110" y="494" font-size="13" font-weight="700" fill="#23303a" text-anchor="middle">呼和浩特·机场/市区</text>
+      <text x="110" y="510" font-size="11" fill="#6b7a86" text-anchor="middle">D0/D1 无车·打车/公交</text>
+      <!-- 节点B 草原 -->
+      <circle cx="350" cy="80" r="27" fill="#2f8f5b" stroke="#fff" stroke-width="2.5"/>
+      <text x="350" y="88" font-size="20" text-anchor="middle">🌿</text>
+      <text x="350" y="46" font-size="13" font-weight="700" fill="#23303a" text-anchor="middle">辉腾锡勒草原 (D2)</text>
+      <!-- 节点C 火山 -->
+      <circle cx="600" cy="210" r="27" fill="#4a4458" stroke="#fff" stroke-width="2.5"/>
+      <text x="600" y="218" font-size="20" text-anchor="middle">🌋</text>
+      <text x="600" y="178" font-size="13" font-weight="700" fill="#23303a" text-anchor="middle">乌兰哈达火山 (D3)</text>
+      <!-- 节点D 沙漠 -->
+      <circle cx="110" cy="260" r="27" fill="#d9a441" stroke="#fff" stroke-width="2.5"/>
+      <text x="110" y="268" font-size="20" text-anchor="middle">🏜️</text>
+      <text x="148" y="248" font-size="13" font-weight="700" fill="#23303a">响沙湾沙漠 (D4)</text>
+    </svg>
+  </div>
+
+  <h2 class="gold">一·附、大交通（机票已定 ✅）</h2>
+  <div class="card">
+    <table>
+      <tr><th>航段</th><th>日期</th><th>航班</th><th>航司 / 承运</th><th>时刻</th><th>航站楼</th></tr>
+      <tr><td>去程</td><td>8/4</td><td>HU7856</td><td>海南航空（新海航）</td><td>16:05 南京 → 18:30 呼和浩特</td><td>南京 T1 起 / 白塔降</td></tr>
+      <tr><td>回程</td><td>8/9</td><td>MF3502（实际承运 MU2892）</td><td>厦门航空代码共享 · 东方航空执飞</td><td>23:50 呼和浩特 → 次日 01:55 南京</td><td>白塔起 / 南京 T2 降</td></tr>
+    </table>
+    <ul class="tips">
+      <li>✅ <b>去程衔接完美</b>：18:30 落地，正好接 D0——进市区入住、不取车、早休，节奏无缝。</li>
+      <li>🌙 <b>回程是红眼航班</b>：23:50 从呼市起飞，<b>次日 01:55 到南京禄口 T2</b>。D5 自驾把车开到机场、21:30 机场还车，白天可在市区逛吃，不用太早收摊。</li>
+      <li>🚕 红眼抵达南京约凌晨 2 点，<b>提前在网约车/出租车 App 约好车</b>回市区；<b>8/10 建议纯休息</b>，不再排事。</li>
+      <li>🧳 去程下午飞，上午在家最后收拾；回程 23:50 起飞，D5 还车（14:00）后有大把时间逛吃。</li>
+    </ul>
+  </div>
+
+  <h2>二、每日行程（6天5晚 · 宽松版）</h2>
+
+  <div class="card">
+    <div class="day">
+      <div class="dayno"><div class="d">D0</div><div class="dt">8/4 晚</div></div>
+      <div class="daybody">
+        <span class="tag t-city">到达 · 无车</span>
+        <p><b>16:05 南京禄口 T1 起飞（海南航空 HU7856）→ 18:30 抵达呼和浩特白塔机场</b>。打车或机场大巴进市区（约 15km，30–40 分钟，打车约 ¥50–80）。<b>今晚不取车</b>；预计 18:30 落地 + 进市区 + 办入住，<b>约 20:00 安顿好</b>。若还有精神，酒店在<b>回民区</b>（清真美食核心），落地第一晚不想跑远可就近逛吃（见下）；累了就早休息，让身体从低海拔（南京）先适应，为去草原（约 2100m）做准备。</p>
+        <ul class="tl">
+          <li><b>约 20:00 先去半亩地·莜面大王（五四商城店）品尝美食</b>：落地首晚<b>第一站</b>。回民区锡林郭勒南路3号加利大厦1楼（近五四商场东口），离酒店约 2–3km / 打车约 ¥10–15，或地铁2号线附属医院站→中山路站；<b>营业时间 17:30–21:30</b>（晚到约 20:00 正好赶上）、人均约 ¥70。<br>
+          必点：凉拌莜面、土窑烤土豆（约 ¥4/个·又面又沙）、自制酸奶、山药鱼子、莜面窝窝——内蒙莜面老字号（当地风味榜 No.3，评分 4.6+），带娃吃莜面 + 酸奶很对路；晚上 6 点后开始排队，<b>早点到更稳</b>。<br>
+          吃完若还有精神，可顺路逛（以下原首晚推荐保留）——<br>
+          · <b>宽巷子美食街（百年老街 · 清真大寺北侧，离酒店约 1km）</b>：烧卖、羊杂碎、焙子、牛肉干、奶食、稀果羹；傍晚红灯笼亮灯，青砖灰瓦 + 灯笼很出片，晚上最热闹。<br>
+          · <b>牛街（新华西街 · 约 1–2km）</b>：蒙餐 / 新疆菜 / 烧烤 / 火锅，2025 焕新霓虹长廊；有 <b>格日勒阿妈蒙古餐(牛街店)</b>（与 D5 告别晚餐同品牌）。<br>
+          · <b>清真大寺 + 伊斯兰风情街（通道街，紧邻宽巷子）</b>：异域圆顶建筑，傍晚灯光，顺路逛拍。<br>
+          · <b>明泽广场 / 附院周边楼下</b>：便利店、小馆子，不想跑远就近解决。<br>
+          <span style="color:#b06a00">＊再远些可选 <b>转角巷</b>（HI-BOX 集装箱潮玩街 · 中山西路，约 2–3km，咖啡 + 全国小吃，年轻人打卡）。大召寺 / 塞上老街（约 2.5–3km）留到 D1 重点，D0 不提前消耗。</span></li>
+        </ul>
+        <div class="drive">🚗 今日交通：机场→市区打车，全程无自驾。</div>
+        <div class="stay">🛏 <b>住：呼和浩特·锦颐优选酒店(新华西街附院店)</b> ✅已订（8.4–8.6 共2晚，<b>含双早·下午茶·宵夜</b>·房型以订单为准，14:00退房；回民区新华西街·明泽广场北侧·附属医院地铁站760m）</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="day">
+      <div class="dayno"><div class="d">D1</div><div class="dt">8/5 周四</div></div>
+      <div class="daybody">
+        <span class="tag t-city">市区 · 松弛日 · 无车</span>
+        <p><b>自然醒</b>（酒店含<b>双早·下午茶·宵夜</b>，双早约 08:30 下楼吃），今天不赶、不取车，当作到达后的缓冲 / 适应日（低海拔南京 → 上草原前先缓一缓）。</p>
+        <ul class="tl">
+          <li><b>09:30 出发 → 内蒙古博物院</b>（免费 · 9:00–17:00、周一闭馆，8/5 周四正常开放；地铁/打车约 15–20 分钟）：看恐龙化石、匈奴契丹文物，空调凉快；<b>开门即去最从容、人少不晒</b>，带娃也精神，留约 2 小时。</li>
+          <li><b>12:00 午餐 · 格日勒阿妈蒙古厨房（东岸店）✅必吃榜 + 回酒店小憩</b>：赛罕区如意·东五纬街与晨光路交汇处（紧邻内蒙古博物院/东站，城东，距博物院步行/打车几分钟）；<b>早市 07:00–14:00，12:00 正好赶上</b>；连锁必吃榜（"奶制品天堂·奶香四溢酪软流心"），人均约 ¥80–100。必点：手扒肉、奶酪馅饼/甜奶酪馅饼、蒙古锅茶（炒米+奶豆腐+黄油）、沙葱包子、奶嚼口拌炒米——以<b>蒙餐+奶制品</b>为主、口味温和，和今晚冰煮羊火锅完全不同、不重不腻；吃完回附院店午休，为 14:30 大召寺攒体力。</li>
+          <li><b>14:30 大召寺 + 塞上老街（逛吃 + 采购）</b>：明清藏传佛教寺庙，旁边老街吃小吃、买奶制品、逛文创；<b>顺手在老街/周边便利店补齐水、零食、防晒、常用药</b>（明天取车直奔草原，不必专门跑超市）。<br>
+          <span style="color:#2d6a9f">☀️ <b>午后避晒</b>：14:30 先进大召寺<b>殿内</b>（银佛/龙雕/壁画都在阴凉处），老街优先走<b>檐下和店里</b>采购、吃小吃、拍巷弄机位；<b>开阔地红墙大合影留到 17:30 黄金光</b>，避开 15:00–16:30 广场暴晒；中间可在老街奶茶/咖啡店坐半小时，躲过最晒的一小时。</span><br>
+          <span style="color:#b06a00">＊可选：<b>服饰妆造预约上门（旅拍写真）</b>，由<b>於婷</b>负责对接预约；想拍古风 / 蒙古袍写真可提前安排，大召寺 + 老街场景出片。</span></li>
+          <li><b>17:30 傍晚·大召寺广场黄金光线拍照 📷</b>：夏末呼和浩特日落约 19:30–20:00，<b>17:30–19:00 是出片黄金时段</b>——红墙金顶、老街青砖与灯笼在斜阳下质感最佳、人潮也褪去；就在老街旁、不用另跑，穿亮色 / 蒙古袍更出片（古建区无人机大概率限飞，以地面机位为主）。拍完在老街吃晚餐。</li>
+          <li><b>19:30 晚餐 · 三和元冰煮羊（塞上老街店）✅必吃榜·非遗老店</b>：玉泉区塞上老街中段（通顺街67号，<b>就在老街里</b>，17:30 拍完大召寺、逛老街途中直接进，动线最顺）；<b>营业 10:30–23:00，19:30 从容</b>；2025 必吃榜 + 玉泉区非遗 + 154 年原址老店、点评 7000+ 条（"逛大召必吃三和元"经典公式）。必点：冰煮羊（巴马水+冰块+药酒+景泰蓝铜锅，仪式感强）、奶酪饼拉丝、肚包肉、八宝茶；羊肉清淡鲜醇无膻，带娃友好、出片也强。⚠️ <b>旺季 19:30 饭点常排 1–2 小时</b>——建议 <b>17:00 一开门就进</b>（拍完照直接去）或 <b>20:30 老街逛完再去</b>；营业到 23:00，晚点吃也不误回附院店（老城→回民区约 10 分钟）。</li>
+          <li><b>20:30 酒店附近超市就近采购自驾物资</b>：晚饭后步行到酒店周边超市（楼下便利店或就近稍大超市皆可），<b>一次补齐自驾途中用量大的物资</b>——大瓶/整箱水、能量零食、湿巾、纸巾、垃圾袋、晕车药、驱蚊、常备药等；明天 08:30 取车即直奔草原，沿途补给点少、草原/火山景区物价偏高，今晚买齐最省心。</li>
+        </ul>
+        <div class="drive">🚗 今日交通：市区步行/打车，无自驾。</div>
+        <div class="stay">🛏 <b>住：呼和浩特·锦颐优选酒店(新华西街附院店)</b> ✅已订（同 D0，连住免搬行李）</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="day">
+      <div class="dayno"><div class="d">D2</div><div class="dt">8/6 周五</div></div>
+      <div class="daybody">
+        <span class="tag t-grass">草原</span>
+        <p><b>08:30 店员送车上酒店（锦颐优选·新华西街附院店）</b>——订单已分车牌 <b>蒙AF50170</b>，车到后现场核对、验车、签合同（详见第四节租车订单）。</p>
+        <ul class="tl">
+          <li><b>08:30 出发 → 辉腾锡勒草原（黄花沟）</b>，东北方向约 100km，走 G7/ S101（先北入大青山），约 2 小时。</li>
+          <li><b>10:30 黄花沟·免费外围拍大片路线（北门一侧·上午·不进收费景区）</b>：趁上午光线好、云海未散拍大片，自驾按此顺序走——<br>
+            ① <b>北门出发 & 大断崖云海</b>：导航「黄花沟旅游景区北售票中心」；<b>到北门后不进售票口</b>，沿进山公路（水泥路）往上开一点，或在北门附近高点停车，<b>路边安全处俯瞰大断崖与沟壑</b>（雨后放晴清晨云海最壮观）。<br>
+            ② <b>黄花塔拉苏木</b>：北门下来导航「黄花塔拉苏木」，走乡道/县道，穿村庄田野、田园风光；到黄花塔拉文化广场感受原生态生活气息，无商业化喧闹（风车群比景区内更密）。<br>
+            ③ <b>北观景台（窝阔台度假中心 / 相会敖包）</b>：导航「窝阔台度假中心」或「相会敖包」；地势高、视野好、大片草原 + 风车群（即「北观景台」视角）。⚠️ 此点实际在南门入口区、会有工作人员，<b>不想进南门就敖包附近拍完转出，通常不拦买票</b>。<br>
+            <b>🚁 无人机在外围自由区可飞，景区内大概率限飞</b>；海拔约 2100m，夏天凉爽、野花盛开。<br>
+            <span style="color:#b06a00">＊进阶（可选）：导航「黄花沟北门」→ 右转巴音浩特民俗村 → 小泥路到<b>白银生态越野基地崖边</b>，黄花沟在脚下、买票游客在沟底；此段为非铺装路，宋Pro 是 SUV 可走但<b>务必先确认租车合同允许非铺装路</b>，雨后慎行。</span></li>
+          <li><b>14:00 草原活动（外围北边牧民马队）</b>：骑马（¥50–150/圈，可砍价，比景区内便宜；女儿骑温顺马由牧民牵）、访牧民人家、喝奶茶（牧民家学做奶茶约 ¥50，比景区实在）、穿蒙古袍拍照。<b>玩后约 14:30 自驾南下到「黄花沟旅游区南门」游客中心</b>（免费停车），准备看 15:00 演出。</li>
+          <li><span style="color:#2d6a9f">🎭 <b>15:00《相会敖包》蒙古风情实景演出</b>：剧场在<b>南区游客中心（南门）</b>内；<b>票未买·待出发前购</b>，计划<b>只买单独演出票 ¥218/人（女儿 15岁168cm 按成人，二大一小合计 ¥654）</b>、<b>不买小火车/索道套票</b>；<b>黄花沟大门票（¥90/人）待官方确认</b>——出发前先问官方/携程客服：凭单独演出票能否直接进南门剧院、是否还需另购大门票（以回复为准；若确认需补，二大一小 +¥270，预算同步 +¥270）。约 60 分钟沉浸式蒙古文化（马术+呼麦+声光电+互动），15:00 场光线柔和不晒，带娃友好。</span></li>
+          <li><b>18:00 看草原落日</b>，晚风凉，备外套。</li>
+        </ul>
+        <div class="drive">🚗 自驾：呼和浩特 → 辉腾锡勒，约 100km / 2h。住草原附近。</div>
+        <div class="stay">🛏 <b>住：勒勒车蓝天民宿二部度假山庄·蒙古包家庭星空包</b> ✅已订（辉腾锡勒草原黄花沟店，4.8/294评；营区高地，2层星空顶躺着看日落+篝火+烟花，有充电桩宋Pro可补电；¥446/晚，详见第三节）。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="day">
+      <div class="dayno"><div class="d">D3</div><div class="dt">8/7 周六</div></div>
+      <div class="daybody">
+        <span class="tag t-grass">草原晨景</span><span class="tag t-vol">火山·仅打卡</span>
+        <p><b>07:30 草原日出 / 晨景</b>：补拍、骑马或草原漫步（草原多留半天，不赶）。</p>
+        <p><b>09:00 草原出发 → 乌兰哈达火山地质公园</b>（察右后旗），向东约 120km，约 1.5–2 小时。</p>
+        <ul class="tl">
+          <li><b>11:00 火山打卡（约 3 小时，仅欣赏 + 拍照）</b>：6 座火山本次只玩 <strong>3 座</strong>，按出片 / 体验最优组合挑——<br>
+            <b>3号 · 登顶轻松</b>：步道平缓，带娃也能轻松登顶看火山口，热身首选；<br>
+            <b>5号 · 航拍壮观</b>：黑褐火山岩肌理完整，无人机航拍最出片（注意景区禁飞标识，起飞前先看指引）；<br>
+            <b>6号「炼丹炉」· 租宇航服出片</b>：外形最上镜，景区附近租宇航服拍照是网红玩法，登顶俯瞰火山口。<br>
+          按你的要求，火山<b>只作打卡</b>，不安排深度徒步、不连看 7/8 号。</li>
+          <li><b>14:00 打卡结束，午餐后直接住火山脚下</b>（经 G55→G6），<b>避免折返呼和浩特、保持环线不回头</b>；次日一早再向西南直奔沙漠。</li>
+        </ul>
+        <div class="drive">🚗 自驾：辉腾锡勒 → 乌兰哈达火山（约120km/2h）→ 傍晚向包头方向（约150km/2h）。住火山/察右后旗。</div>
+        <div class="stay">🛏 <b>住：魅力火山·星野围炉民宿(乌兰哈达火山地质公园店)</b>（白银会员实付¥519；4.8/383评·有充电桩宋Pro可补电·自助早·亲子萌宠+围炉篝火；同村距火山~2km，D3/D4里程不变，详见第三节）。火山区域信号弱，提前下离线地图。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="day">
+      <div class="dayno"><div class="d">D4</div><div class="dt">8/8 周日</div></div>
+      <div class="daybody">
+        <span class="tag t-des">沙漠·傍晚+夜</span>
+        <div class="ticket">🎟 <b>响沙湾门票·索道·仙沙岛·骑骆驼 套票</b> ✅已订（携程 / 二成人一大童）：含入园门票 + 往返索道 + 仙沙岛（骑骆驼 / 滑沙 / 沙漠冲浪车 / 高空滑索 / 果老剧场演出）。套票已出，到景区凭订单/二维码直接入园，不用现场排队买票。</div>
+        <p><b>08:30 火山周边慢行 / 补拍</b>（若昨天未尽兴）；或睡个懒觉再出发，节奏宽松。</p>
+        <p><b>10:30 出发 → 响沙湾（库布齐沙漠）</b>，向西经 G6 京藏高速，约 280–300km（这是全程最长的一段，但一脚油门直达、不回头；G6 会擦过呼和浩特北缘高速走廊，属顺路穿过非进城），3–3.5 小时，别赶。</p>
+        <ul class="tl">
+          <li><b>14:00 抵达响沙湾</b>：中国离城市最近的沙漠之一，沙丘会「唱歌」。沙漠是此行重点，今天傍晚尽兴玩、明天上午再晨游补拍。</li>
+          <li><b>14:30 玩仙沙岛（单岛，约 4 小时）</b>：骑骆驼、沙漠冲浪车（大脚怪）、滑沙、高空滑索、果老剧场演出——亲子项目集中在这一个岛，足够尽兴；<b>悦沙岛本次不安排</b>（与仙沙项目重叠，省时省力、票价也更省）。</li>
+          <li><b>傍晚 沙漠落日 + 篝火/演出</b>。</li>
+          <li><b>可选夜游</b>：沙漠星空、度假村夜景。</li>
+        </ul>
+        <div class="drive">🚗 自驾：火山/乌兰察布 → 响沙湾，约 200–300km / 3h。住响沙湾周边。</div>
+        <div class="stay">🛏 <b>住：响沙湾·星辰疌行房车露营地</b>（✅已订；4.9/27评·新开业·景区内近福沙岛·家庭房可住3人·房车对初中生娃有记忆点；正是为 D5 沙漠晨游能直接进、不折返驱车，详见第三节）。下单前曾提醒确认住客含往返索道/入园接驳。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="day">
+      <div class="dayno"><div class="d">D5</div><div class="dt">8/9 周一</div></div>
+      <div class="daybody">
+        <span class="tag t-des">沙漠</span><span class="tag t-city">返程</span>
+        <ul class="tl">
+          <li><b>08:30 沙漠晨游</b>：凉快人少，补拍、再玩没尽兴的项目。</li>
+          <li><b>11:30 出发回呼和浩特</b>，G6 向东，顺路经 <b>哈素海</b>（呼市西南约 40–60km，湿地 + 草原，<b>可选项 ✅</b>：想打卡就停约 1h 拍拍照；赶时间/累了则跳过直接回城）。</li>
+          <li><b>伴手礼采购（非必选·沿途顺路）</b>：行李全程留车上，<b>不必专程进市区</b>。回程途中在<b>正规大超市 / 当地特产店</b>顺手采购即可（牛肉干、奶贝、奶酪、麻糖、蒙古特产）；若想逛老街/商场再去牛街·大召或摩尔城。</li>
+          <li><b>15:00《千古马颂》实景马舞剧</b>：东北郊·<b>敕勒川草原</b>上的内蒙古少数民族群众文化体育运动中心（导航「千古马颂」）；<b>百匹名马 + 百名骑士 + 裸眼 3D</b> 的蒙古马史诗，约 90 分钟，内蒙文旅头牌；<b>已锁定 380 尊宾区×3</b>（E 区 4 排 3/4/5 座·大麦 ¥380/张×3=¥1,140·凭证码 4248 1775·订单 15492607285398739），看完离白塔机场仅约 20 分钟，顺去机场。</li>
+          <li><b>傍晚 告别晚餐（东北郊 / 机场方向就近）</b>：<b>不专程回市区</b>，演出后就近吃，推荐 <b>格日勒阿妈奶茶馆</b>（蒙古奶茶+手把肉）/ <b>老绥元烧麦</b>（稍麦宴）/ <b>蒙古大营</b>（帐篷手把肉），给内蒙行收个好尾。</li>
+          <li><b>约 21:00 自驾 → 白塔机场</b>（从市区/东北郊过去均 20–40 分钟），<b>21:30 租车公司到机场取回车</b>（车牌 <b>蒙AF50170</b>），行李可全程留车上直到机场，还车即进 T1 航站楼。</li>
+          <li><b>23:50 红眼航班（MF3502，东航 MU2892 执飞）飞南京</b>，次日 01:55 到禄口 T2（落地约凌晨 2 点，提前约车回家）。</li>
+        </ul>
+        <div class="drive">🚗 自驾：响沙湾 →（顺路可停哈素海）→ 回程沿途顺路采购伴手礼（不专程进市区）→ 东北郊·敕勒川草原看 15:00《千古马颂》→ 东北郊/机场方向就近告别晚餐 → 白塔机场（D5 自驾把车开到机场，21:30 租车公司机场取回车，行李全程留车上）。不回酒店，还车后进航站楼等航班。</div>
+        <p class="est">💡 D5 不专程进市区：回程沿途顺路采购伴手礼（想逛街再去牛街/摩尔城）→ 15:00 东北郊看《千古马颂》（演出地离机场仅约 20 分钟，看完顺去机场）→ 东北郊/机场方向就近告别晚餐 → 21:30 租车公司机场取回车；行李全程留车上直到机场。<b>《千古马颂》已锁定 380 尊宾×3·实付 ¥1,140</b>（E 区 4 排 3/4/5 座·凭证码 4248 1775，2号门入口兑纸质票，扫码核销时屏幕亮度调到最高）。伴手礼（牛肉干/奶贝/奶酪）均可托运；奶酒等液体>100ml 必须托运、且部分航班限带。红眼航班次日 01:55 到南京 T2，落地约凌晨 2 点，提前约车回家。</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="gold">三、五晚住宿安排（舒适兼顾性价比）</h2>
+  <div class="card">
+    <p>原则：带娃优先<strong>独立卫浴 + 空调 + 干净</strong>；热门景区（草原/沙漠）周末极易满房，<strong>提前 1–2 周预订</strong>；想体验特色（蒙古包/沙漠夜）选高品质款，不介意则住旗县连锁最稳最省。</p>
+    <table>
+      <tr><th>晚</th><th>日期</th><th>住宿地</th><th>推荐区域 / 类型</th><th>参考价/晚</th><th>为什么选这</th></tr>
+      <tr><td>1</td><td>8/4</td><td>呼和浩特 ✅已订</td><td><b>锦颐优选酒店(新华西街附院店)</b>（回民区新华西街·明泽广场北侧·附属医院地铁站760m）；<b>含双早·下午茶·宵夜</b>·房型以订单为准</td><td>已订·¥700（8/4–8/6 共2晚合计）</td><td>到达夜早休；D1 大召寺/塞上老街打车/地铁约2.5–3km；8/6 送车上门；14:00退房</td></tr>
+      <tr><td>2</td><td>8/5</td><td>呼和浩特 ✅已订</td><td>同上（<b>连住不搬家</b>，8.4–8.6 共2晚）</td><td>—（连住，含在¥700内）</td><td>市区松弛日，免搬行李</td></tr>
+      <tr><td>3</td><td>8/6</td><td>草原·辉腾锡勒 ✅蒙古包</td><td><b>✅已订：勒勒车蓝天民宿二部度假山庄</b>（辉腾锡勒草原黄花沟店，4.8/294评，营区高地+充电桩）；主店·察右中旗勒勒车蓝天度假山庄/黄花沟旅游区店 5.0/373评 为备选；均有篝火/烟花/家庭房；<b>✅已订房型：蒙古包家庭星空包(2层·星空顶·视野无敌·¥446)</b>，一家三口体验最佳；三人间(1层炕·¥288)为平层备选；候选：黄花沟金帐汗(4.4–4.5纯蒙古包)、辉腾锡勒黄花驿站(4.4)</td><td><b>¥446（✅已订）</b></td><td>带娃体验草原夜；订时确认独立卫浴+保暖(夜温10-15℃)+充电桩（宋Pro可补电）；旺季周末满房快，尽早订</td></tr>
+      <tr><td>4</td><td>8/7</td><td>火山·乌兰哈达</td><td><b>✅已订：魅力火山·星野围炉民宿(乌兰哈达火山地质公园店)</b>（4.8/383评，同价位评分最稳；有充电桩宋Pro可补电；自助早餐+萌宠+围炉煮茶+篝火演出+敬哈达，亲子活动最丰富；与星宿/花筑同处牛明村、距火山~2km，D3/D4里程不变）；备选：花筑·乌兰天空(4.8/~300评·亲子主题房最全，但充电桩未列需确认)</td><td>¥519（✅已订·白银实付）</td><td>同价位评分最稳(4.8/383评)、带桩、亲子体验最丰富；白银会员价已到底(=钻石85折顶格)，无需升钻石；8/7周六·✅已订</td></tr>
+      <tr><td>5</td><td>8/8</td><td>沙漠·响沙湾</td><td><b>✅已订：星辰疌行房车露营地</b>（4.9/27评·新开业，景区内近福沙岛·家庭房可住3人·智能客控·房车对初中生娃有记忆点；在沙侧、D5晨游可直接进不折返）；已购仙沙岛套票¥900/3人单列门票；备选：一粒沙度假村(4.3/872评·¥298起，最便宜但评分最低)、福沙度假岛(4.7/1486评·¥2360起)</td><td>✅已订·¥800（1晚·8/8）</td><td>真·沙里+评分最高(4.9)+房费仅顺沙/福沙的1/3；不玩悦沙岛故不选悦沙帐篷；下单前确认住客含索道接驳；✅已订</td></tr>
+    </table>
+    <p class="est">🛏 5 晚住宿✅均已订：锦颐优选·新华西街附院店 ¥700（8/4–8/6 共2晚合计） + 草原蒙古包¥446 + 火山魅力¥519 + 星辰疌行房车¥800（1晚·8/8）；合计 <b>¥2,465</b>（700+446+519+800）。</p>
+  </div>
+
+  <h2>四、租车 & 路况要点</h2>
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <h3 style="margin:4px 0 6px;font-size:15px">🚙 租车（已定 ✅）</h3>
+        <ul class="tips">
+          <li><b>车型</b>：比亚迪 <b>宋Pro 新能源（25 款）</b>，插电混动 PHEV（发动机 1.5L + 前置电机 + 刀片电池，可油可电）。</li>
+          <li><b>车龄</b>：<b>1 年内新款</b>（电池/轮胎更新、可靠度高，84 元差价换来更优电池健康度，详见决策）。</li>
+          <li><b>订单</b>：携程订单号 <b>1128149267889225</b>，已分配车牌 <b>蒙AF50170</b>。</li>
+          <li><b>取车</b>：2026/8/6 <b>08:30 店员送车上门</b>——锦颐优选酒店(新华西街附院店)（起床即可用车，无需跑门店）。</li>
+          <li><b>还车</b>：2026/8/9 <b>21:30 租车公司到白塔机场取回车</b>——D5 自驾把车开到机场还车，行李全程留车上直到机场，还车即进航站楼，刚好衔接 23:50 红眼航班。</li>
+          <li><b>租期</b>：<b>3 天 13 小时</b>（D2–D5，D0/D1 不租 = 省 1 天费用）。</li>
+          <li><b>价格</b>：<b>已订·¥1500</b>（不含油费/充电费；以你确认为准，已同步预算表）。</li>
+          <li><b>店员联系</b>：<b>取车前 30 分钟</b>主动联系你，请保持手机畅通。</li>
+          <li><b>需携带</b>：驾驶员 <b>身份证 + 驾照原件（或电子驾照）</b>，到店后核对车况、签署合同。</li>
+          <li><b>必加全险</b>（约 ¥100/天，基础险不赔沙石路伤）；<b>取车拍 360° 视频验车</b>（重点底盘/车轮）。</li>
+          <li><b>为什么这条租比 30 天前查的「宋PLUS DM-i ¥1015」更好</b>：
+            <br>· 省心 100%：取车送酒店+还车在机场，<b>全程不用跑门店</b>，锦颐优选·新华西街附院店楼下取车、白塔机场还车，最适合家庭自驾；
+            <br>· 时间更顺：自驾到机场还车，行李一直留车上到机场最后一刻，旧方案 15:00 还车还要拎行李；
+            <br>· 续航无焦虑：插混满油满电 1300–1735km，环线 900km 一箱油搞定；
+            <br>· 新手友好：1 年内新车，360°全景/主动刹车/ACC 自适应巡航这些辅助配置都在；
+            <br>· 床车彩蛋：后排放倒接近全平（微 8° 倾角，进深 1.9m），可铺充气垫+硬板当午休/观星床，一家三口一大一小躺卧舒适。
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin:4px 0 6px;font-size:15px">🛣️ 路况</h3>
+        <ul class="tips">
+          <li><b>主干道</b>：G6 京藏、G55 二广、G7 京新均为高速，路况好、车少。</li>
+          <li><b>景区接驳</b>：草原/火山门口多为铺装路，轿车也能走；但雨后草原土路易陷，SUV 更稳。</li>
+          <li><b>测速</b>：内蒙古区间测速多，高速也别飙，导航实时提醒。</li>
+          <li><b>加油</b>：进草原/火山前在旗县加满油（混动也建议满电出发）。</li>
+          <li><b>信号</b>：草原、火山腹地信号弱，提前下离线地图。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="vol">五、行李 & 准备</h2>
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <h3 style="margin:4px 0 6px;font-size:15px">🎒 必带</h3>
+        <ul class="tips">
+          <li>薄羽绒/冲锋衣（草原火山夜温可到 10–15℃）</li>
+          <li>防晒三件套：防晒霜 SPF50+、墨镜、宽檐帽</li>
+          <li>舒适运动鞋（火山碎石路、沙漠徒步）</li>
+          <li>保湿护肤 + 润唇膏（北方干）</li>
+          <li>身份证（住宿/景区实名）、驾照</li>
+          <li>床车装备：200×150 充气垫 + 一块硬板（拉平 8° 微倾）</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin:4px 0 6px;font-size:15px">👧 带娃贴士</h3>
+        <ul class="tips">
+          <li>备肠胃药（牛羊肉+奶制品易不适）、晕车药</li>
+          <li>沙漠/草原紫外线极强，娃更需防晒</li>
+          <li>车上备水、零食、颈枕</li>
+          <li>骑马选牧民牵行的温顺马，别让娃单独骑快马</li>
+          <li>给女儿留拍照时间（火山宇航服、草原日落）</li>
+          <li>8/4 晚提前到，先适应海拔/干燥，降低高反概率</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <div>
+        <h3 style="margin:4px 0 6px;font-size:15px">📷 拍摄装备（已租）</h3>
+        <ul class="tips">
+          <li><b>大疆 Mini 5 Pro 长续航版 无人机</b>：航拍 5号火山黑褐岩肌理、草原落日、沙漠沙丘曲线最出片；<b>起飞前先看景区禁飞标识</b>（火山/部分景区限飞），备满电 + 1–2 套备用桨叶（草原/火山风大，既易耗电也易损耗）。</li>
+          <li><b>大疆 Action 6 运动相机</b>：第一视角记录骑马、沙漠冲浪车、滑沙、篝火；建议带胸带/头戴支架 + 防水壳（沙漠粉尘大，备镜头布随时擦）。</li>
+          <li><b>存储 / 供电</b>：多备 microSD 卡 + 移动电源（无人机/运动相机一天耗电快，车上随时补电，宋Pro 有取电口）。</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin:4px 0 6px;font-size:15px">🎞️ 拍摄节奏建议</h3>
+        <ul class="tips">
+          <li><b>D2 草原</b>：无人机拍高山草甸 + 风车阵，傍晚蹲落日。</li>
+          <li><b>D3 火山</b>：5号无人机航拍（禁飞区先看标识），6号宇航服地面出片。</li>
+          <li><b>D4/D5 沙漠</b>：清晨/傍晚沙丘光影 + 运动相机第一视角。</li>
+          <li>草原/火山瞬时风大，起飞前看风级，避免炸机。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>六、美食 & 预算参考</h2>
+  <div class="card">
+    <h3 style="margin:2px 0 6px;font-size:15px">🍖 必吃</h3>
+    <ul class="tips">
+      <li>早：羊肉烧麦、羊杂碎、咸奶茶</li>
+      <li>正餐：手把肉、烤羊腿、莜面、铁锅焖面、驼肉饼</li>
+      <li>小吃：奶皮子、奶酪、牛肉干（手信）</li>
+      <li>沙漠/草原景区餐贵且一般，正餐尽量在旗县/市区吃</li>
+    </ul>
+    <h3 style="margin:14px 0 6px;font-size:15px">💰 3 人总预算（估算）</h3>
+    <table>
+      <tr><th>项目</th><th>估算</th><th>说明</th></tr>
+      <tr><td>南京⇄呼和浩特机票（已定）</td><td>已定·¥4020</td><td>二大一小合计✅已订：8/4 HU7856 去 / 8/9 红眼 MF3502（东航 MU2892 执飞）回；娃儿童票</td></tr>
+      <tr><td>租车 宋Pro新能源(25款) 3天13小时（不含油）</td><td>已订·¥1500</td><td>携程订单 1128149267889225 / 蒙AF50170 / 8/6 08:30 送车上酒店 → 8/9 21:30 白塔机场取回车</td></tr>
+      <tr><td>油费 + 过路费（+充电费）</td><td>¥700–900</td><td>混动油费约¥304 + 环线过路约¥400–600 + 插混充电费极少（已含）；租车¥1500 不含此项</td></tr>
+      <tr><td>住宿 5 晚</td><td>¥2,465</td><td>锦颐优选¥700（2晚合计）+蒙古包¥446+火山魅力¥519(白银实付)+星辰疌行房车¥800（1晚·8/8）；合计¥2,465；详见第三节</td></tr>
+      <tr><td>门票 + 演出（响沙湾套票✅已订 + 黄花沟外围免费 +《相会敖包》¥654 +《千古马颂》¥1,140）</td><td>¥2644</td><td>响沙湾套票✅已订 <b>¥850</b>（携程·二成人一大童·含入园门票+往返索道+仙沙岛骑骆驼/滑沙/冲浪车/高空滑索/果老剧场）；黄花沟走外围免费草原（省大门票/小火车/索道·约¥885），仅自驾到南门看15:00《相会敖包》单独演出票¥218/人×3=¥654（女儿按成人）；<b>黄花沟大门票（¥90/人）待官方确认</b>——若确认凭单独演出票不能进、需另购，则二大一小 +¥270，本行变 ¥2,914、总预算 +¥270；《千古马颂》D5 15:00场·东北郊敕勒川（百匹马实景剧，女儿全价·无儿童票，<b>380档·尊宾·大麦官方¥380/张×3=¥1,140</b>·已锁·E 区 4 排 3/4/5 座·凭证码 4248 1775·订单 15492607285398739·不退不换）；哈达门已去掉；合计 ¥850+¥654+¥1,140=¥2,644（未含待确认大门票）</td></tr>
+      <tr><td>餐饮 6 天</td><td>¥1800–3000</td><td>人均 ¥100–170/天</td></tr>
+      <tr><td><b>合计</b></td><td><b>¥13,109–16,509</b></td><td>丰俭由人；机票¥4020 + 租车¥1500（不含油/充电费） + 油费过路充电¥700–900 + 住宿¥2,465 + 门票演出¥2,644 + 餐饮¥1800–3000 = <b>¥13,129–14,529</b>；D0/D1 附院店¥700（2晚）、D4星辰房车¥800、响沙湾套票¥850、租车¥1500 均已填入确认</td></tr>
+    </table>
+  </div>
+
+  <div class="warn">
+    <b>⚠️ 行前确认（重要）</b><br>
+    1. 机票 ✅ 已定：8/4 HU7856 去（18:30 到呼市）/ 8/9 红眼 MF3502（东航 MU2892 执飞）回（次日 01:55 到南京 T2）；回程落地约凌晨 2 点，提前约车回家；<br>
+    2. 租车 ✅ 已定：携程订单 <b>1128149267889225</b>，车牌 <b>蒙AF50170</b>；<b>8/6 08:30 店员送车到锦颐优选·新华西街附院店</b> / <b>8/9 21:30 白塔机场取回车（D5 自驾到机场还车）</b>；<b>携带身份证+驾照原件（或电子驾照）</b>；取车前 30 分钟店员会主动联系；<b>取车务必拍 360° 视频验车</b>（底盘/车轮），然后到店核对车况、签合同；<br>
+    3. 响沙湾/黄花沟门票、沙漠度假酒店、草原蒙古包在 8 月周末极易满房，<b>住宿✅均已订</b>，<b>响沙湾门票·索道·仙沙岛·骑骆驼套票✅已订（携程·二成人一大童）</b>，<b>黄花沟走外围免费草原（不买小火车/索道套票；大门票待官方确认·约¥885 暂未计入）</b>，并自驾到南门看 15:00《相会敖包》演出、单独买票 ¥218/人（二大一小均成人价·女儿15岁168cm按成人·合计¥654），当天18:00前可买、随时退，无需提前；<br>
+    4. 草原蒙古包条件朴素，介意卫生/独立卫浴可选旗县酒店；<br>
+    5. 实际里程/路况以出发前导航为准，本单为规划参考。<br>
+    6. 《相会敖包》演出票（<b>票尚未购买</b>）：出发前先向官方/携程客服确认<b>凭单独演出票能否直接进入南门剧院、是否还需另购 ¥90 大门票</b>（你们只买演出票、不买小火车/索道套票；<b>大门票以官方回复为准，若需补则二大一小 +¥270、预算同步 +¥270</b>）；演出在南区、约 60 分钟、建议提前半小时占位（D2 看 15:00 场）；遇大风降温室内演出不受影响，是草原日保险项。<br>
+    7. 《千古马颂》实景马舞剧（D5 15:00 场，东北郊·敕勒川草原上的内蒙古少数民族群众文化体育运动中心）：<b>已锁定 380 尊宾区×3（E 区 4 排 3/4/5 座·大麦官方原价 ¥380/张×3=¥1,140）</b>——官方渠道，验真无虞；订单号 15492607285398739、<b>凭证码 4248 1775</b>；提前到「2号门入口」凭凭证码兑换纸质票，扫码核销时屏幕亮度调到最高；票不退不换。百匹名马+裸眼3D 的蒙古马史诗，女儿按全价（无儿童票）；演出地离白塔机场仅约 20 分钟，看完顺去机场还车。
+  </div>
+
+  <footer>
+    内蒙亲子自驾行程规划 · 草原·沙漠·火山环线 · 更新于 2026-07-29 ｜ 8/4晚提前到达更宽松 ｜ 落地次日取车 ｜ 火山仅玩3座(3号登顶/5号航拍/6号宇航服)半天打卡 ｜ D3魅力火山·星野围炉¥519(✅已订·白银实付)+D4星辰疌行房车露营地¥800(✅已订) ｜ 响沙湾门票·索道·仙沙岛·骑骆驼套票¥850✅已订(携程·二成人一大童) ｜ 黄花沟免费外围+南门看15:00《相会敖包》¥654(女儿按成人) + D5 15:00《千古马颂》¥1,140(百匹马·380尊宾×3·E区4排3/4/5座·大麦已锁·凭证码4248 1775) ｜ 租车¥1500(不含油)·锦颐优选·新华西街附院店¥700(2晚)·蒙古包¥446
+  </footer>
+
+</div>
+</body>
+</html>
