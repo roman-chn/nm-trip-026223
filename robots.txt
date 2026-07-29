@@ -1,2 +1,3 @@
 User-agent: *
+Allow: /99eec3eb6eaad3dbab6573deead712ef.txt
 Disallow: /
