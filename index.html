@@ -54,9 +54,73 @@
   .stay b{color:#2d6a9f}
   .ticket{background:#fbf1dc;border:1px solid #f0d9a0;border-radius:10px;padding:10px 14px;font-size:13.5px;margin:10px 0}
   .ticket b{color:var(--gold-d)}
+  /* ===== 毕业彩蛋 ===== */
+  #confetti-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9000}
+  #grad-banner{position:fixed;top:0;left:0;right:0;z-index:9100;display:flex;justify-content:center;align-items:flex-start;padding-top:16vh;pointer-events:none;opacity:0;transform:translateY(-30px);transition:opacity .8s ease,transform .8s ease}
+  #grad-banner.show{opacity:1;transform:translateY(0)}
+  #grad-banner .gb-inner{background:linear-gradient(120deg,#2f8f5b,#d9a441 55%,#4a4458);color:#fff;text-align:center;padding:24px 32px;border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,.3);max-width:88%}
+  #grad-banner h2{margin:0 0 8px;font-size:28px;letter-spacing:2px;border:0;padding:0}
+  #grad-banner p{margin:4px 0 0;font-size:14.5px;opacity:.95}
+  @keyframes gbPop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+  #surprise-overlay{position:fixed;inset:0;z-index:9500;display:none;justify-content:center;align-items:center;background:rgba(20,30,40,.82)}
+  #surprise-overlay.show{display:flex;animation:fadeIn .5s ease}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  #surprise-box{background:linear-gradient(160deg,#fff,#fff7ea);border-radius:24px;padding:32px 28px;text-align:center;max-width:90%;width:420px;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:gbPop .6s ease}
+  #surprise-box .emoji{font-size:52px;line-height:1}
+  #surprise-box h3{margin:14px 0 8px;font-size:23px;color:#b9842a}
+  #surprise-box p{margin:6px 0;font-size:14.5px;color:#23303a}
+  #surprise-box .close{margin-top:18px;display:inline-block;background:linear-gradient(120deg,#2f8f5b,#d9a441);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-size:15px;cursor:pointer;font-weight:600}
+  #gift-fab{position:fixed;right:18px;bottom:18px;z-index:9400;width:60px;height:60px;border-radius:50%;border:0;background:linear-gradient(160deg,#d9a441,#b9842a);color:#fff;font-size:30px;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;animation:giftBob 2.2s ease-in-out infinite}
+  #gift-fab:hover{transform:scale(1.08)}
+  @keyframes giftBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @media(max-width:640px){#grad-banner .gb-inner{padding:18px 20px}#grad-banner h2{font-size:23px}}
 </style>
 </head>
 <body>
+<!-- ===== 毕业彩蛋 ===== -->
+<canvas id="confetti-canvas"></canvas>
+<div id="grad-banner"><div class="gb-inner">
+  <h2>🎓 毕业快乐，LuoBuBu！</h2>
+  <p>这份草原 · 沙漠 · 火山之旅，是送给你的毕业礼物 💝</p>
+  <p style="font-size:13px;opacity:.9">👉 右下角有个礼物盒，点开有惊喜哦</p>
+</div></div>
+
+<div id="surprise-overlay"><div id="surprise-box">
+  <div class="emoji">🎉💝🎊</div>
+  <h3>Surprise！给 LuoBuBu 的惊喜</h3>
+  <p>初中毕业快乐！接下来的 6 天，草原的风、沙漠的星、火山的落日，都是为你准备的 ✨</p>
+  <p>愿你带着好奇出发，满载快乐回家 🚙💨</p>
+  <button class="close" onclick="closeSurprise()">收下这份惊喜 💖</button>
+</div></div>
+
+<button id="gift-fab" title="点我开启惊喜">🎁</button>
+
+<script>
+(function(){
+  var canvas=document.getElementById('confetti-canvas');
+  var ctx=canvas.getContext('2d');
+  var W,H,parts=[],running=false,raf=null;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  window.addEventListener('resize',resize);resize();
+  var colors=['#2f8f5b','#d9a441','#4a4458','#e6683c','#f4c430','#ffffff'];
+  function make(n){parts=[];for(var i=0;i<n;i++){parts.push({x:Math.random()*W,y:-20-Math.random()*H*0.5,r:5+Math.random()*7,c:colors[(Math.random()*colors.length)|0],vy:2+Math.random()*3.5,vx:-1.5+Math.random()*3,rot:Math.random()*6,vr:-0.2+Math.random()*0.4,shape:Math.random()<0.5?0:1});}}
+  function draw(){ctx.clearRect(0,0,W,H);for(var i=0;i<parts.length;i++){var p=parts[i];p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;if(p.shape===0){ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);}else{ctx.beginPath();ctx.arc(0,0,p.r*0.5,0,7);ctx.fill();}ctx.restore();if(p.y>H+20){p.y=-20;p.x=Math.random()*W;}}}
+  function loop(){draw();if(running){raf=requestAnimationFrame(loop);}else{ctx.clearRect(0,0,W,H);}}
+  function burst(n){make(n||160);running=true;if(raf)cancelAnimationFrame(raf);loop();setTimeout(function(){running=false;},3500);}
+  window.addEventListener('load',function(){
+    burst(180);
+    var b=document.getElementById('grad-banner');
+    b.classList.add('show');
+    setTimeout(function(){b.classList.remove('show');},4200);
+  });
+  document.getElementById('gift-fab').addEventListener('click',function(){
+    burst(260);
+    document.getElementById('surprise-overlay').classList.add('show');
+  });
+  window.closeSurprise=function(){document.getElementById('surprise-overlay').classList.remove('show');};
+  document.getElementById('surprise-overlay').addEventListener('click',function(e){if(e.target===this)window.closeSurprise();});
+})();
+</script>
 <header class="hero">
   <h1>🎓 LuoBuBu毕业旅行 · 草原·沙漠·火山 · 内蒙双飞亲子自驾</h1>
   <p>南京 ⇄ 呼和浩特双飞 ｜ LuoBuBu初中毕业旅行（一家三口同行）｜ 6天5晚（8/4晚到）｜ SUV 亲子自驾环线</p>
