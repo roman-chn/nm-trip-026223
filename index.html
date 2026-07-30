@@ -65,6 +65,7 @@
   #first-overlay .fo-card{background:linear-gradient(120deg,#2f8f5b,#d9a441 55%,#4a4458);color:#fff;text-align:center;padding:30px 34px;border-radius:22px;box-shadow:0 16px 50px rgba(0,0,0,.35);max-width:88%;transform:translateY(20px);transition:transform .8s ease}
   #first-overlay.show .fo-card{transform:translateY(0)}
   #first-overlay h2{margin:0 0 10px;font-size:27px;letter-spacing:2px;border:0;padding:0}
+  #first-overlay .fo-title{margin:0 0 10px;font-size:23px;letter-spacing:1px;line-height:1.5;border:0;padding:0}
   #first-overlay p{margin:6px 0 0;font-size:15px;opacity:.96}
   #first-overlay .hint{font-size:14px;opacity:.92;margin-top:10px}
   /* 礼物按钮：放大、居中、放在弹框下方 */
@@ -81,7 +82,7 @@
   #surprise-box h3{margin:14px 0 8px;font-size:23px;color:#b9842a}
   #surprise-box p{margin:6px 0;font-size:14.5px;color:#23303a}
   #surprise-box .close{margin-top:18px;display:inline-block;background:linear-gradient(120deg,#2f8f5b,#d9a441);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-size:15px;cursor:pointer;font-weight:600}
-  @media(max-width:640px){#first-overlay .fo-card{padding:22px 24px}#first-overlay h2{font-size:22px}#gift-btn{width:80px;height:80px;font-size:42px}}
+  @media(max-width:640px){#first-overlay .fo-card{padding:22px 24px}#first-overlay h2{font-size:22px}#first-overlay .fo-title{font-size:18px}#gift-btn{width:80px;height:80px;font-size:42px}}
 </style>
 </head>
 <body>
@@ -89,9 +90,8 @@
 <canvas id="confetti-canvas"></canvas>
 
 <div id="first-overlay"><div class="fo-card">
-  <h2>🎓 毕业快乐，LuoBuBu！</h2>
-  <p>这份草原 · 沙漠 · 火山之旅，是额外送给你的毕业彩蛋 💝</p>
-  <p class="hint">下方彩蛋，点开有惊喜喔！👇</p>
+  <p class="fo-title">🎓 毕业快乐，LuoBuBu！这是份额外送给你的毕业彩蛋 💝</p>
+  <p class="hint">点开有惊喜喔！</p>
   <button id="gift-btn" title="点我开启惊喜">🎁</button>
 </div></div>
 
